@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`header > should match snapshot 1`] = `
+<DocumentFragment>
+  <header
+    style="background-color: var(--foreground);"
+  >
+    <h1
+      class="p-6 font-bold text-4xl"
+      style="color: var(--accent);"
+    >
+      Weather App
+    </h1>
+  </header>
+</DocumentFragment>
+`;
