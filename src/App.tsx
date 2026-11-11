@@ -1,5 +1,7 @@
+import { Header } from "./components/header/header";
+
 function App() {
-  return <h1 className="font-bold">hello, world!</h1>;
+  return <Header />;
 }
 
 export default App;
