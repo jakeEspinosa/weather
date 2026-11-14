@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: npm
-    directory: /
+    directory: /ui
     schedule:
       interval: daily
     open-pull-requests-limit: 10
@@ -32,4 +32,13 @@ updates:
     groups:
       actions:
         patterns: ["*"]
+    labels: [dependencies]
+
+  - package-ecosystem: gomod
+    directory: /server
+    schedule:
+      interval: daily
+    groups:
+      minor-and-patch:
+        update-types: ["minor", "patch"]
     labels: [dependencies]
