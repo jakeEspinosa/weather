@@ -1,9 +1,9 @@
 package main
 
 import (
-	"server/internal/api"
+	"server/internal/openmeteo"
 )
 
 func main() {
-	api.FetchWeather()
+	openmeteo.FetchWeather()
 }
