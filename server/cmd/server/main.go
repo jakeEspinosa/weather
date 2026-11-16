@@ -1,9 +1,22 @@
 package main
 
 import (
-	"server/internal/openmeteo"
+	"log/slog"
+	"net/http"
+	"os"
+	"server/internal/api"
 )
 
 func main() {
-	openmeteo.FetchWeather()
+	logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))
+
+	mux := http.NewServeMux()
+
+	api.NewServerMetricsHandler(logger).RegisterRoutes(mux)
+
+	logger.Info("listening", "addr", ":8080")
+	if err := http.ListenAndServe(":8080", mux); err != nil {
+		logger.Error("server", "err", err)
+		os.Exit(1)
+	}
 }
